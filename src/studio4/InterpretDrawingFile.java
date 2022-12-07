@@ -29,12 +29,11 @@ public class InterpretDrawingFile {
 		double parameterTwo = in.nextDouble();
 		double parameterThree = in.nextDouble();
 		double parameterFour = in.nextDouble();
-		double parameterFive = in.nextDouble();
-		double parameterSix = in.nextDouble();
+	
 
 		StdDraw.setPenColor(redComponent, greenComponent, blueComponent);
 		
-		if (shapeType == "ellipse") {
+		if (shapeType.equals("ellipse")) {
 			if (isFilled == true) {
 				StdDraw.filledEllipse(parameterOne, parameterTwo, parameterThree, parameterFour);
 			}
@@ -42,7 +41,7 @@ public class InterpretDrawingFile {
 				StdDraw.ellipse(parameterOne, parameterTwo, parameterThree, parameterFour);
 			}
 		}
-		else if (shapeType == "rectangle") {
+		else if (shapeType.equals("rectangle")) {
 			if (isFilled == true) {
 				StdDraw.filledRectangle(parameterOne, parameterTwo, parameterThree, parameterFour);
 			}
@@ -50,7 +49,10 @@ public class InterpretDrawingFile {
 				StdDraw.rectangle(parameterOne, parameterTwo, parameterThree, parameterFour);
 			}
 		}
-		else if (shapeType == "triangle") {
+		else if (shapeType.equals("triangle")) {
+		
+			double parameterFive = in.nextDouble();
+		    double parameterSix = in.nextDouble();
 			if (isFilled == true) {
 				double [] x = {parameterOne, parameterThree, parameterFive};
 				double [] y = {parameterTwo, parameterFour, parameterSix};
